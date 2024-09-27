@@ -1,9 +1,14 @@
 // 반환되는 데이터의 타입
-interface MockData {
+export interface MockData {
   productId: string;
   productName: string;
   price: number;
   boughtDate: string;
+}
+
+export interface MockDataResponse {
+  datas: MockData[];
+  isEnd: boolean;
 }
 
 const MOCK_DATA: MockData[] = [
@@ -716,13 +721,6 @@ const MOCK_DATA: MockData[] = [
     boughtDate: "Sun May 18 2014 05:12:12 GMT+0900 (한국 표준시)",
   },
 ];
-
-interface MockData {
-  productId: string;
-  productName: string;
-  price: number;
-  boughtDate: string;
-}
 
 const PER_PAGE = 10;
 

@@ -1,30 +1,22 @@
-# React + TypeScript + Vite
+# 프리온보딩 FE 챌린지 10월 (2024) | 리액트 오픈소스 펼쳐보기
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 챌린지 과제 내용
 
-Currently, two official plugins are available:
+1. 하나의 SinglePage에 Intersection Observer를 이용해 무한스크롤을 구현하세요.
+2. 현재 가져온 상품 리스트들의 액수들의 합계를 화면에 보여주세요 (ex. 현재 20개의 상품을 가져온 상태라면 20개 물품의 가격 총 합을 보여주면 됨)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 실행 방법
 
-## Expanding the ESLint configuration
+1. 레포지토리 다운로드
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+```
+git clone https://github.com/yyeonkim/wanted-2410.git
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+2. 패키지 설치 및 실행
+
+```
+cd wanted-2410
+npm i
+npm run dev
+```

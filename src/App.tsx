@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { getMockData, MockData, MockDataResponse } from "./data";
 
 let page = 0;
+let totalAmount = 0;
 
 function App() {
   const ref = useRef<HTMLDivElement>(null);
@@ -13,10 +14,13 @@ function App() {
   const observer = new IntersectionObserver((entries, observer) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        console.log(page);
         getMockData(page++).then((res) => {
           const { datas, isEnd } = res as unknown as MockDataResponse;
 
+          totalAmount += datas.reduce(
+            (acc, cur) => acc + cur.price,
+            totalAmount
+          );
           setData((prev) => [...prev, ...datas]);
           setIsEnd(isEnd);
 
@@ -36,7 +40,10 @@ function App() {
     <div className="container">
       <h1>〰️ General Store 〰️</h1>
       <div className="list">
-        <span className="list-header">Products ({data.length})</span>
+        <div className="list-header">
+          <span>Products ({data.length})</span>
+          <span>Total price ${totalAmount.toLocaleString()}</span>
+        </div>
         <div className="list-main">
           {data.map((item) => (
             <div className="card" key={item.productId}>

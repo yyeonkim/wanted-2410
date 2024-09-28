@@ -33,22 +33,25 @@ function App() {
   }, []);
 
   return (
-    <div className="container-center">
+    <div className="container">
       <h1>〰️ General Store 〰️</h1>
       <div className="list">
-        {data.map((item) => (
-          <div className="card" key={item.productId}>
-            <h2>{item.productName}</h2>
-            <p>
-              <span>
-                {"Bought date: " + new Date(item.boughtDate).toDateString()}
-              </span>
-              <span>Price: ${item.price}</span>
-            </p>
-          </div>
-        ))}
-        {!isEnd && <div className="spinner" ref={ref} />}
+        <span className="list-header">Products ({data.length})</span>
+        <div className="list-main">
+          {data.map((item) => (
+            <div className="card" key={item.productId}>
+              <h2>{item.productName}</h2>
+              <p>
+                <span>
+                  Bought date: {new Date(item.boughtDate).toDateString()}
+                </span>
+                <span>Price: ${item.price}</span>
+              </p>
+            </div>
+          ))}
+        </div>
       </div>
+      {!isEnd && <div className="spinner" ref={ref} />}
     </div>
   );
 }

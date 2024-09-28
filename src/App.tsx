@@ -42,7 +42,7 @@ function App() {
       <div className="list">
         <div className="list-header">
           <span>Products ({data.length})</span>
-          <span>Total price ${totalAmount.toLocaleString()}</span>
+          <span>Total amount ${totalAmount.toLocaleString()}</span>
         </div>
         <div className="list-main">
           {data.map((item) => (
